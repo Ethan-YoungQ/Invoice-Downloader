@@ -110,6 +110,7 @@ jobs:
           name: macos-arm64-qualified
           if-no-files-found: error
           path: release-assets/macos/
+          retention-days: 7
 
   qualify_windows_x64:
     name: Qualify Windows x64 installer and portable ZIP
@@ -134,6 +135,7 @@ jobs:
           name: windows-x64-qualified
           if-no-files-found: error
           path: release-assets/windows/
+          retention-days: 7
 
   promote:
     name: Verify qualified bytes and prepare immutable release bundle
@@ -229,6 +231,7 @@ jobs:
           name: desktop-release-bundle
           if-no-files-found: error
           path: release-bundle/
+          retention-days: 7
 
   publish:
     name: Publish the verified combined GitHub Release
